@@ -25,4 +25,9 @@ public class ClienteImplementacionServicio implements ClienteServicio {
     public List<Cliente> getTodosClientesManual(){
         return clienteRepositorio.traerTodo();
     }
+
+    @Override
+    public void insertarCliente(Cliente cliente){
+         clienteRepositorio.insertarCliente(cliente.getNombre(),cliente.getCorreo(),cliente.getTelefono());
+    }
 }
