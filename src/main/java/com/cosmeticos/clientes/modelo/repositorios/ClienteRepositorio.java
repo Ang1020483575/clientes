@@ -18,5 +18,10 @@ public interface ClienteRepositorio extends Repository<Cliente, Long> {
     @Transactional
     @Query(value = "INSERT INTO cosmeticos.clientes (nombre, correo, telefono) VALUES (:nombre, :email, :telf)", nativeQuery = true)
     void insertarCliente(String nombre, String email, String telf);
+
+    @Modifying
+    @Transactional
+    @Query(value = "update cosmeticos.clientes set nombre= :nombre, correo= :email, telefono= :telefono where id_clientes = :idCliente", nativeQuery = true)
+    void actualizarCliente(Long idCliente, String nombre, String email, String telefono);
 }
 

@@ -30,4 +30,9 @@ public class ClienteImplementacionServicio implements ClienteServicio {
     public void insertarCliente(Cliente cliente){
          clienteRepositorio.insertarCliente(cliente.getNombre(),cliente.getCorreo(),cliente.getTelefono());
     }
+
+    @Override
+    public void actualizarCliente (Cliente cliente){
+        clienteRepositorio.actualizarCliente(cliente.getId_cliente(),cliente.getNombre(),cliente.getCorreo(),cliente.getTelefono());
+    }
 }

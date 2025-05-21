@@ -2,10 +2,7 @@ package com.cosmeticos.clientes.controlador;
 
 import com.cosmeticos.clientes.modelo.entidades.Cliente;
 import com.cosmeticos.clientes.servicios.ClienteServicio;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 import java.util.List;
@@ -33,5 +30,11 @@ public class  ClienteControlador {
     public void insertarCliente(@RequestBody Cliente cliente){
         clienteServicio.insertarCliente(cliente);
     }
+
+    @PutMapping("/actualizarCliente")
+    public void actualizarCliente (@RequestBody Cliente cliente){
+        clienteServicio.actualizarCliente(cliente);
+    }
+
 
 }
